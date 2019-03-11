@@ -1,0 +1,135 @@
+\documentclass[10pt,journal,onecolumn]{IEEEtran}
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{lipsum}
+
+\begin{document}
+% The paper headers
+\markboth{\today}
+{}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Fine-Grained Object Recognition and/or Localization in Remote Sensing Imagery}
+
+%\author{Atakan Serbes \\
+%Department of Computer Science\\
+%Bilkent University, Bilkent, Ankara 06800, Turkey\\
+%Email: atakan.serbes@bilkent.edu.tr}
+
+\author{\IEEEauthorblockN{ Atakan Serbes, 21200694} \\
+\IEEEauthorblockA{\textit{Department of Computer Science,} 
+\textit{Bilkent University} \\
+%Bilkent, Ankara 06800, Turkey \\
+Email: atakan.serbes@bilkent.edu.tr}}
+
+% make the title area
+\maketitle
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+%\begin{abstract}
+%The abstract goes here.
+%\end{abstract}
+%
+%% Note that keywords are not normally used for peerreview papers.
+%\begin{IEEEkeywords}
+%IEEE, IEEEtran, journal, \LaTeX, paper, template.
+%\end{IEEEkeywords}
+
+
+
+\vspace{-15mm}
+\section{Problem Description}
+	Nowadays, the amount of data collected by the aerial means, especially by the satellites, is increasing day by day with the advance of technology. Remote sensing image classification is one of the fundamental tasks of image processing in this field. Deep Convolutional Neural Networks (DCNN)\cite{krizhevsky2012imagenet} brought the state-of-the-art learning framework for the image recognition. \\
+\indent Earlier works in this field were like detecting roads \cite{mnih2010learning} \cite{alshehhi2017simultaneous}, buildings \cite{akccay2010building} \cite{vakalopoulou2015building} using traditional methods with classifiers such as random forests. Later, the DCNNs brought great results into this field. Using DCNNs for classification reached a point where increasing the accuracy became so much harder and their performance on most known datasets like UC Merced \cite{yang2010bag} already show great results. It is because the classes in older databases and applications on them worked on very distinctive features like a road, agricultural area, and coastal area. \\
+\indent Fine-grained object recognition on the other hand is about identifying a type of object among a large number of closely related sub-categories as mentioned in \cite{sumbul2019multisource}. For example a recent work in the field may identify the types of the cars as small, medium, large and their colors rather than just identifying a car class. With the emerging resolution in imaging technology, it is now possible to collect more detailed images and the task of fine-grained object recognition will be more important as these data gets collected. \\
+\indent This is why I plan to study fine-grained object recognition in my project as it is open to further development.
+%\IEEEPARstart The problem
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+
+%\hfill mds
+% 
+%\hfill August 26, 2015
+%
+%\subsection{Subsection Heading Here}
+%Subsection text here.
+%
+
+\section{Datasets}
+Many datasets were examined for the project. And to study the problem of fine-grained object recognition and/or localization, three of the dataset collections were selected. The first of the three datasets are DOTA-v1.5 Large-Scale Dataset \cite{xia2018dota} with 400,000 annotated instances with 16 categories which includes large areas like baseball diamonds, harbors as well as small parts such as small vehicles and helicopters. The second dataset considered is named PatternNet \cite{zhou2018patternnet}, a Large-Scale high resolution remote sensing dataset containing 38 different classes that vary from details like oil wells to areas like basketball courts. The third dataset may be the DLRSD \cite{chaudhuri2018multilabel} dense labeling dataset with 21 categories. \\
+\indent So, I plan to use different datasets and combine them to create a curated dataset for studying the problems of fine-grained object recognition and/or localization using deep learning. Other datasets that can be considered are \cite{cheng2017remote} \cite{cheng2014multi} \cite{cheng2016survey} \cite{cheng2016learning} and two datasets in \cite{li2017rsi}.
+
+%\begin{figure*}[htp]
+%  \centering
+%  \subfigure[Roundabout]{\includegraphics[scale=0.38]{1}}\quad
+%  \subfigure[Basketball Court]{\includegraphics[scale=0.38]{2}}\quad
+%  \subfigure[Plane]{\includegraphics[scale=0.38]{3}}
+%\end{figure*}
+
+\begin{figure}[ht]
+  \centering
+  \subfigure[Roundabout]{%
+    \includegraphics[width=0.23\textwidth]{1}%
+    \label{fig:a}%
+    }\hspace{0.2cm}%or more
+    \subfigure[Basketball Court]{%
+    \includegraphics[width=0.228\textwidth]{2}%
+    \label{fig:b}%
+  }
+    \subfigure[Plane]{%
+    \includegraphics[width=0.228\textwidth]{3}%
+    \label{fig:c}%
+  }
+    \subfigure[Small Vehicle]{%
+    \includegraphics[width=0.228\textwidth]{4}%
+    \label{fig:d}%
+  }
+  \caption{Some examples from the DOTA dataset \cite{xia2018dota} }
+  \label{fig:abcd}
+\end{figure}
+
+\vspace{-5mm}
+\section{Packages/Libraries to be Used}
+I plan to use Keras API inside TensorFlow during my project. However, there are works in the field \cite{sumbul2019multisource}\cite{sumbul2018fine} which use PyTorch while working on fine-grained object recognition, so if it seems hard developing with TensorFlow, I can switch to PyTorch. Also since using these frameworks may also include using most-known libraries like pandas and numpy, I plan to use these libraries also.
+
+%\appendices
+%\section{Proof of the First Zonklar Equation}
+%Appendix one text goes here.
+
+% you can choose not to have a title for an appendix
+% if you want by leaving the argument blank
+%\section{}
+%Appendix two text goes here.
+
+
+% use section* for acknowledgment
+%\section*{Acknowledgment}
+%The authors would like to thank...
+
+% references section
+%\begin{thebibliography}{1}
+
+\bibliographystyle{IEEEtran}
+\bibliography{/Users/atakanserbes/Desktop/Tex_Templates/Proposal/Single_Column/References/Master}
+
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+ % 0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+%\end{thebibliography}
+
+\end{document}
